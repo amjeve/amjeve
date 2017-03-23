@@ -7,28 +7,29 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="1404.47">
   <style type="text/css">
-body{ text-align:center; margin:0; background-image: url('http://i65.tinypic.com/25rf8dc.jpg'); background-color: #EFEFEF; background-attachment:fixed;}
-div.column{width: 70%; max-width: 70%; margin: 0 auto; text-align: left; position: relative;}
-div.header{margin: 0; top: 0;
-  z-index: 999; 
-width: inherit;
- display: block; 
-  position: fixed;   background: #32B2B2; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left, #32B2B2, teal); /* For Safari 5.1 to 6.0 */ac
-    background: -o-linear-gradient(to right, #32B2B2, teal); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(to right, #32B2B2, teal); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #32B2B2, teal); /* Standard syntax */}
-}
-div.headercontents{padding: 6pt;}
 
-div.page{ margin: 60px 0 0 0; font-family: "Open sans", Verdana; background-color: #FFF; opacity: 0.8; }
-div.page table{padding: 6pt;}
+body{ text-align:center; margin:0; background-image: url('http://i65.tinypic.com/25rf8dc.jpg'); background-color: #EFEFEF; background-attachment:fixed;}
+
+#column{width: 70%; max-width: 70%; margin: 0 auto; text-align: left;}
+
+#header{ width: 100%; margin: 0 0 6pt 0; position: relative; height: 150px;
+   background: #32B2B2; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(top, #32B2B2, teal); /* For Safari 5.1 to 6.0 */ac
+    background: -o-linear-gradient(to bottom, #32B2B2, teal); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to bottom, #32B2B2, teal); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, #32B2B2, teal); /* Standard syntax */
+    border-radius: 0pt 0pt 5pt 5pt; 
+}
+#page{ background-color: #FFF; opacity:0.8;}
+
+
+
+#page table{padding: 6pt;}
 
    .position{padding: 0; width:100%; margin: 20pt 0 20pt 0; }
-   .education td.role{padding: 0 0 12pt;}
    .position a:hover, p a:hover{color: #32B2B2; transition: color 1s ease;}
    p a{color: #000}
-   .date{font-family: "Open sans", Verdana; font-size: 14pt; color: black; font-style: italic; width: 20%; text-align: center; valign: top;}
+   .date{font-family: "Open sans", Verdana; font-size: 14pt; color: black; font-style: italic; width: 20%; text-align: center; }
    .title, .title a{font-family: "Open sans", Verdana; font-size: 20pt; color: black; padding: 0;}
    .place, .place a{font-family: "Open sans", Verdana; font-size: 14pt; color: black; padding: 0 0 12pt 0; line-height: 50%;}
    .project, .role{font-family: "Open sans", Verdana; font-size: 10pt; color: black; font-weight: bold;}
@@ -37,19 +38,21 @@ div.page table{padding: 6pt;}
    .position p{font-family: "Open Sans", Verdana; font-size: 10pt; font-weight: normal; text-align: justify;}
  
 
- h1{font-family: "Open sans", Verdana; font-size: 24pt; color: white; font-weight: normal; line-height: 80%; padding: 2pt 0 2pt 10pt; margin: 0; text-decoration: none; font-style: italic; background: #32B2B2; /* For browsers that do not support gradients */
+ h1{font-family: "Open sans", Verdana; font-size: 24pt; display: block; float: none;  color: white; font-weight: normal; line-height: 80%; padding: 2pt 0 2pt 10pt; margin: 0; text-decoration: none; background: #32B2B2; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, #32B2B2, teal); /* For Safari 5.1 to 6.0 */ac
     background: -o-linear-gradient(to right, #32B2B2, teal); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(to right, #32B2B2, teal); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #32B2B2, teal); /* Standard syntax */ border-style:solid; border-width: 1px 0; border-color: teal; opacity: 1;}
-p.pub{padding: 6pt;}
+    background: linear-gradient(to right, #32B2B2, teal); /* Standard syntax */ border-style:solid; border-width: 1px 0; border-color: teal; opacity: 1; font-variant: small-caps;}
+
+p.pub{padding: 6pt; font-family: "Open sans", verdana;}
 
 p.up{display:block; text-align:center;}
-.up a{display:block; margin: auto; font-weight: bold;  font-size: 24pt; text-decoration: none; background-color: #000; border-radius: 50px; color:#FFF; width: 50px; height: 50px;}
-.up a:hover{background-color: #EFEFEF; transition: background-color 1s ease;}
+.up a{display:block; margin: auto; font-weight: bold;  font-size: 24pt; text-decoration: none; background-color: #000; border-radius: 50px; color:#FFF; width: 50px; height: 50px; float:right;}
+.fixed{position: fixed; bottom: 0; margin: 0 -20pt 0 0; opacity: 0.5; width: 80%; margin: 0 20pt 20pt 0;}
+.fixed:hover{opacity: 1; transition: opacity 1s ease;}
 
-.menu{width: 100%; padding: 0; margin: 0; position: relative; list-style: none;}
-.menu li{float: left; width:20%;  margin: 0; list-style-type: none; text-align: center; padding: 6pt 0; font-family: "Open sans", Verdana; font-size: 10pt; text-decoration: none; color: #FFF; position:relative;}
+.menu{width: 100%; padding: 0; margin: 0; position: relative; list-style: none; z-index:999;}
+.menu li{float: left; width:25%;  margin: 0; list-style-type: none; text-align: center; padding: 6pt 0; font-family: "Open sans", Verdana; font-size: 10pt; text-decoration: none; color: #FFF; position:relative;}
 .menu ul a{ display:block; padding: 6pt; border-radius: 3pt; margin: 0 6pt; text-decoration: none; color: #FFF;}
 .menu ul{ background-color: white; position: absolute; max-height: 0; margin:0; padding:0; overflow: hidden;}
 .menu ul li{float: none; width: 100%; list-style:none; text-align: left; font-weight: normal;}
@@ -58,10 +61,14 @@ p.up{display:block; text-align:center;}
 .menu ul a:hover{background-color: #32B2B2;  transition: background-color 1s ease; font-weight: normal;}
 
 .right{float: right; background: limegreen; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(top, limegreen, green); /* For Safari 5.1 to 6.0 */ac
+    background: -webkit-linear-gradient(top, limegreen, green); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(to bottom, limegreen, green); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(to bottom, limegreen, green); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to bottom, limegreen, green); /* Standard syntax */ border-radius: 3pt;}
+
+.maintitle{font-size: 50pt; color: #FFF; Font-family:tahoma; margin: auto; display: block; margin: 0 0 0 50pt; font-variant: small-caps;}
+.phd{font-size: 30pt}
+.icons{float: right; display: block; margin: 6pt;}
 
 </style>
 
@@ -70,11 +77,10 @@ p.up{display:block; text-align:center;}
 
 <body>
 
-<div class="column">
-<div class="header">
-<div class="headercontents">
-<A href="mailto:AMJEve-CV@yahoo.co.uk">Alex Eve</a>
-
+<div id="column">
+  
+<div id="header">
+<span>
 <ul class="menu">
 <li>Research Career
 <ul>
@@ -98,17 +104,18 @@ p.up{display:block; text-align:center;}
 </li>
 
 <li class="right">About</li>
-
-
 </ul>
 
+  <span class="maintitle">Alex Eve, <span class=phd>PhD</span>
+<span class="icons">T I R O L</span>
+  
+ </span>
 
-
+</span>
 </div>
+  
+<div id="page">
 
-
-</div>
-<div class="page">
 <h1><a name="Position">Current Position</a></h1>
 
 <table class="position">
@@ -131,7 +138,7 @@ p.up{display:block; text-align:center;}
 <tr><td></td><td class="place" colspan="3"><a href="http://www.sars.no/research/RentzschGrp.php">Rentzsch Group, Sars Centre for Molecular Marine Biology</a></td></tr>
 <tr><td></td><td class="leftcol">Key projects:</td><td class="project" colspan="2">"Evolution of the Hedgehog signalling pathway."</td></tr>
 <tr><td></td><td></td><td colspan="2">
-<p>Thanks to a <A href="">Company of Biologists</a>, Development <a href="#grants">Travel Fellowship</a> I was able to visit the lab of Fabian Rentzsch for two months. Here, I was trained to culture <i>Nematostella vectensis</i> as a developmental model organism and performed some preliminary experiments investigating the role of Hedgehog signalling in <i>Nematostella</i> development.</p><p>See some of my research images from the trip <a href="images.html">here</a>.</p>
+<p>Thanks to a <a href="">Company of Biologists</a>, Development <a href="#grants">Travel Fellowship</a> I was able to visit the lab of Fabian Rentzsch for two months. Here, I was trained to culture <i>Nematostella vectensis</i> as a developmental model organism and performed some preliminary experiments investigating the role of Hedgehog signalling in <i>Nematostella</i> development.</p><p>See some of my research images from the trip <a href="images.html">here</a>.</p>
 </td></tr>
 </table>
 
@@ -194,10 +201,14 @@ p.up{display:block; text-align:center;}
 
 <p class="pub"><b>Eve AMJ</b>, Place ES, and Smith JC (2017) Comparison of Zebrafish <i>tmem88a</i> mutant and morpholino knockdown phenotypes. <i>PLoS ONE</i> 12(2): e0172227. <A href="http://dx.doi.org/10.1371/journal.pone.0172227">DOI:10.1371/journal.pone.0172227</a></p>
 <p class="pub">Cannon JE, Place ES, <b>Eve AMJ</b>, Bradshaw CR, Sesay A, Morrell NW, and Smith JC (2013). Global analysis of the haematopoietic and endothelial transcriptome during zebrafish development. <i>Mech. Dev.</i> 130, 122–31. <A href="http://dx.doi.org/10.1016/j.mod.2012.10.002">DOI: 10.1016/j.mod.2012.10.002</a></p>
-<div class="center"><p class="up"><a class="top" href="#top">&#8613;</a></p></div>
 
 <div style="height:500px;">&nbsp;</div>
+
+
 </div>
+
+<div class="fixed"><p class="up"><a class="top" href="#top">&#8613;</a></p></div>
+
 </div>
 
 
