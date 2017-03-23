@@ -9,12 +9,17 @@
   <style type="text/css">
 body{ text-align:center; margin:0; background-image: url('http://i65.tinypic.com/25rf8dc.jpg'); background-color: #EFEFEF; background-attachment:fixed;}
 div.column{width: 70%; max-width: 70%; margin: 0 auto; text-align: left; position: relative;}
-div.header{margin: 0; background-color:teal; top: 0;
+div.header{margin: 0; top: 0;
   z-index: 999; 
 width: inherit;
  display: block; 
-  position: fixed;}
-div.headercontents{padding: 6pt; }
+  position: fixed;   background: #32B2B2; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #32B2B2, teal); /* For Safari 5.1 to 6.0 */ac
+    background: -o-linear-gradient(to right, #32B2B2, teal); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to right, #32B2B2, teal); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #32B2B2, teal); /* Standard syntax */}
+}
+div.headercontents{padding: 6pt;}
 
 div.page{ margin: 60px 0 0 0; font-family: "Open sans", Verdana; background-color: #FFF; opacity: 0.8; }
 div.page table{padding: 6pt;}
@@ -43,6 +48,21 @@ p.up{display:block; text-align:center;}
 .up a{display:block; margin: auto; font-weight: bold;  font-size: 24pt; text-decoration: none; background-color: #000; border-radius: 50px; color:#FFF; width: 50px; height: 50px;}
 .up a:hover{background-color: #EFEFEF; transition: background-color 1s ease;}
 
+.menu{width: 100%; padding: 0; margin: 0; position: relative; list-style: none;}
+.menu li{float: left; width:20%;  margin: 0; list-style-type: none; text-align: center; padding: 6pt 0; font-family: "Open sans", Verdana; font-size: 10pt; text-decoration: none; color: #FFF; position:relative;}
+.menu ul a{ display:block; padding: 6pt; border-radius: 3pt; margin: 0 6pt; text-decoration: none; color: #FFF;}
+.menu ul{ background-color: white; position: absolute; max-height: 0; margin:0; padding:0; overflow: hidden;}
+.menu ul li{float: none; width: 100%; list-style:none; text-align: left; font-weight: normal;}
+.menu li:hover{background-color: teal; transition: background-color 0.2s ease;}
+.menu li:hover ul{background-color: teal; transition: max-height 1s ease; max-height: 600px; width:100%; border-radius: 0pt 0pt 5pt 5pt; font-weight: normal;}
+.menu ul a:hover{background-color: #32B2B2;  transition: background-color 1s ease; font-weight: normal;}
+
+.right{float: right; background: limegreen; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(top, limegreen, green); /* For Safari 5.1 to 6.0 */ac
+    background: -o-linear-gradient(to bottom, limegreen, green); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to bottom, limegreen, green); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, limegreen, green); /* Standard syntax */ border-radius: 3pt;}
+
 </style>
 
 
@@ -55,17 +75,41 @@ p.up{display:block; text-align:center;}
 <div class="headercontents">
 <A href="mailto:AMJEve-CV@yahoo.co.uk">Alex Eve</a>
 
-<div class="menu">
+<ul class="menu">
+<li>Research Career
+<ul>
+<li><a href="index.html#Position">Current Position</a></li>
+<li><a href="index.html#Experience">Research Experience</a></li>
+<li><a href="index.html#Education">Education</a></li>
+<li><a href="index.html#Grants">Grants & Awards</a></li>
+<li><a href="index.html#Publications">Publications</a></li>
+</ul>
+</li>
+
+<li>Professional Development</li>
+
+<li>Portfolio<ul>
+<li><a>Current position</a></li>
+<li><a>Current position</a></li>
+<li><a>Current position</a></li>
+<li><a>Current position</a></li>
+<li><a>Current position</a></li>
+</ul>
+</li>
+
+<li class="right">About</li>
+
+
+</ul>
 
 
 
-</div>
 </div>
 
 
 </div>
 <div class="page">
-<h1><a name="current">Current Position</a></h1>
+<h1><a name="Position">Current Position</a></h1>
 
 <table class="position">
 <tr><td class="date">Jul 2016 - Present</td><td class="title" colspan="3" ><a href="http://biosciences.exeter.ac.uk/staff/index.php?web_id=Alex_Eve">Associate Research Fellow</a></td></tr>
@@ -80,7 +124,7 @@ p.up{display:block; text-align:center;}
 <tr><td></td><td></td><td class="date2">Oct 2016</td><td class="role">Collaborator: A*STAR Institute of Molecular and Cell Biology</td></tr>
 <tr><td></td><td></td><td colspan="2"><p></p></td></tr></table>
 
-<h1><a name="research">Research Experience</a></h1>
+<h1><a name="Experience">Research Experience</a></h1>
 
 <table class="position">
 <tr><td class="date">Jan 2017 - Mar 2017</td><td class="title" colspan="3" >Guest Research Fellow</td></tr>
@@ -126,7 +170,7 @@ p.up{display:block; text-align:center;}
 </table>
 
 
-<h1><a name="education">Education</a></h1>
+<h1><a name="Education">Education</a></h1>
 
 <table class="position">
 <tr><td class="date" rowpsan="2">Sep 2011 - Sep 2015</td><td class="title">University College London</td></tr>
@@ -142,11 +186,11 @@ p.up{display:block; text-align:center;}
 <tr><td></td><td class="place">9 GCSEs (A*-B)</td></tr>
 </table>
 
-<h1><a name="publications">Grants and awards</a></h1>
+<h1><a name="Grants">Grants and awards</a></h1>
 
 
 
-<h1><a name="publications">Publications</a></h1>
+<h1><a name="Publications">Publications</a></h1>
 
 <p class="pub"><b>Eve AMJ</b>, Place ES, and Smith JC (2017) Comparison of Zebrafish <i>tmem88a</i> mutant and morpholino knockdown phenotypes. <i>PLoS ONE</i> 12(2): e0172227. <A href="http://dx.doi.org/10.1371/journal.pone.0172227">DOI:10.1371/journal.pone.0172227</a></p>
 <p class="pub">Cannon JE, Place ES, <b>Eve AMJ</b>, Bradshaw CR, Sesay A, Morrell NW, and Smith JC (2013). Global analysis of the haematopoietic and endothelial transcriptome during zebrafish development. <i>Mech. Dev.</i> 130, 122–31. <A href="http://dx.doi.org/10.1016/j.mod.2012.10.002">DOI: 10.1016/j.mod.2012.10.002</a></p>
