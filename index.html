@@ -7,135 +7,74 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="1404.47">
   <style type="text/css">
-   body {background-color: #EFEFEF; padding: 0pt; margin: 0pt;}
-   div.hide{display:none;}
-   div.leftbar{background-color: #32B2B2; border-style: solid; border-width: 0pt 1pt 0pt 0pt; border-color: #000000; width: 20%; height: 100%; position: fixed; padding: 1pt 0pt; margin: 0; box-shadow: 2px 0px 2px 1px grey;}
-   div.leftbar h1{color: white; font-family: "Verdana"; font-variant: normal; font-size: 40pt; border-style: none; font-weight: normal; padding: 0; margin: 0; text-align: center;}
-   div.leftbar h2{color: white; font-family: "Arial"; font-variant: normal; font-size: 14pt; border-style: none; text-align: center;}
- div.drop {max-height: 0; overflow: hidden; -webkit-transition: max-height 1s;
-	-moz-transition: max-height 1s;
-	transition: max-height 1s ease;}
-div.drop1:hover .drop {max-height: 500px; width: 100%; }
-div.drop1:hover, a.drop:hover{color:black; transition: color 0.5s ease;}
-div.drop1{font-size:12pt;}
- div.drop1, div.drop a, a.drop{color: white;  display: block; font-family: "Open sans", Tahoma; text-decoration: none; padding: 6pt; text-transform: uppercase; }
-div.drop a{font-size: 10pt;}
-   div.drop a:hover{color: black; background-color: white; transition: background-color 1s ease; border-radius: 5px; %box-shadow: inset 1px 1px 2px 2px black;%}
-   div.rightbar{margin: 0 0 0 20%; border-style: solid; border-width: 0pt; border-color: #000000; width: 100% px; height: 100%; padding: 1pt 0pt;}
-   div.box{background-color: white; padding: 0 0 5pt 0; margin: 0 10pt 0pt 10pt; opacity: 0.8; border-style:solid; border-color: black; border-width: 1pt; opacity: 0.8; %box-shadow: 2px 2px 2px 1px grey;%}
-   .nav {width: 100%; height:100%; border-width: 0pt;}
-  h1{font-family: "Open sans", Tahoma; font-size: 20pt; color: #32B2B2; font-weight: normal; line-height: 80%; padding: 5pt; margin: 0pt; text-decoration: none; font-style: italic;}
-   h2{padding: 0pt; margin: 0pt; text-decoration: none; color: black;} 
-    
-   .position{margin: 10pt 6pt; padding: 0; width:100%; margin: 0 10% 0 0; margin: 20pt 0 20pt 0; }
-   .position a:hover{color: #32B2B2; transition: color 1s ease;}
-   .date{font-family: "Open sans", Tahoma; font-size: 14pt; color: black; font-style: italic; vertical-align: middle; width: 20%; text-align: center;}
-   .title, .title a{font-family: "Open sans", Tahoma; font-size: 20pt; color: black; vertical-align: middle; padding: -0;}
-   .place, .place a{font-family: "Open sans", Tahoma; font-size: 14pt; color: black; padding: 0 0 12pt 0;}
-   .project{font-family: "Open sans", Tahoma; font-size: 10pt; color: black; font-weight: bold;}
-   .leftcol{font-family: "Open sans", Tahoma; font-size: 10pt; color: black; font-style: italic; width: 10%;}
-   .date2{font-family: "Open sans", Tahoma; font-size: 10pt; color: black; width: 10%;}
-   .role{font-family: "Open sans", Tahoma; font-size: 10pt; color: black;}
-   a.more{font-size: 20pt; text-align: right; margin: 0 20pt 0 0; display: block;}
-  </style>
+body{ text-align:center; margin:0; background-image: url('http://i65.tinypic.com/25rf8dc.jpg'); background-color: #EFEFEF;}
+div.wrap{ width: 70%; margin: 0 auto; text-align: left;}
+div.column{}
+div.header{width:100%; background-color:teal; height: 200px;}
+.fixedElement {
+    background-color: #c0c0c0;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:100;
+}
+</style>
+<script>
+function moveScroller() {
+    var $anchor = $("#scroller-anchor");
+    var $scroller = $('#scroller');
+
+    var move = function() {
+        var st = $(window).scrollTop();
+        var ot = $anchor.offset().top;
+        if(st > ot) {
+            $scroller.css({
+                position: "fixed",
+                top: "0px"
+            });
+        } else {
+            if(st <= ot) {
+                $scroller.css({
+                    position: "relative",
+                    top: ""
+                });
+            }
+        }
+    };
+    $(window).scroll(move);
+    move();
+}
+</script>
+
 </head>
-  
+
 <body>
-<div class="leftbar">
-<h1>Alex Eve</h1>
-	<h3><ul><li>Twitter</li><li>Research Gate</li><li>LinkedIn</li><li>Email</li><li>ORCID</li></ul></h3>
-<div class="drop1"><span>Online CV</span>
-<div class="drop">
-<a href="index.html#current">Current Position</a>
-<a href="index.html#research">Research Experience</a>
-<a href="index.html#education">Education</a>
-<a href="index.html#teaching.html">Teaching</a>
-<a href="development.html">Professional Development</a>
-<a href="meetings.html">Meetings</a>
-</div></div>
-<div class="drop1"><span>Portfolio</span>
-<div class="drop">
-<a href="outreach.html">Outreach</a>
-<a href="presentations.html">Presentations</a>
-<a href="images.html">Research Images</a>
-</div></div>
-<a class="drop" href="publications.html">Publications</a>
-<a class="drop" href="online_CV.png">Download CV</a>
 
-<div class="hide"><iframe class="nav"></iframe></div>
+<div class="wrap">
+<div class="column">
+<div class="header">
+
+<div id="sidebar" style="width:270px;"> 
+  <div id="scroller-anchor"></div> 
+  <div id="scroller" style="margin-top:10px; width:270px"> 
+    Scroller Scroller Scroller
+  </div>
 </div>
 
-<div class ="rightbar">
-
-<div class="box">
-<h1><a name="current">Current Position</a></h1>
-
-<table class="position">
-<tr><td class="date">Jul 2016 - Present</td><td class="title" colspan="3" ><a href="http://biosciences.exeter.ac.uk/staff/index.php?web_id=Alex_Eve">Associate Research Fellow</a></td></tr>
-<tr><td></td><td class="place" colspan="3">Ingham Group, <a href="http://www.exeter.ac.uk/livingsystems/">Living Systems Institute</a>, University of Exeter</td></tr>
-<tr><td></td><td class="leftcol">Key projects:</td><td class="project" colspan="2">"Evolution of the Hedgehog signalling pathway." <br /></td></tr>
-<tr><td></td><td></td><td colspan="2" class="role">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
-</td></tr>
-<tr><td></td><td class="leftcol">Additional roles:</td><td class="date2">Nov 2016</td><td class="role">Visiting scientist: Francis Crick Institute</td></tr>
-<tr><td></td><td></td><td colspan="2"><p>Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p></td></tr>
-
-<tr><td></td><td></td><td class="date2">Oct 2016</td><td class="role">Collaborator: A*STAR Institute</td></tr>
-<tr><td></td><td></td><td colspan="2"><p>Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p></td></tr>
-
-
-<tr><td style="display:none;" colspan=4><a class="more">...</a></td></tr>
-</table>
-
-
-<h1><a name="research">Research Experience</a></h1>
-
-<table class="position">
-<tr><td class="date">Jan 2017 - Mar 2017</td><td class="title" colspan="3" >Guest Research Fellow</td></tr>
-<tr><td></td><td class="place" colspan="3"><a href="http://www.sars.no/research/RentzschGrp.php">Rentzsch Group, Sars Centre for Molecular Marine Biology</a></td></tr>
-<tr><td></td><td class="leftcol">Key projects:</td><td class="project" colspan="2">"Evolution of the Hedgehog signalling pathway."</td></tr>
-<tr><td></td><td></td><td colspan="2">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
-</td></tr>
-</table>
-
-
-<table class="position">
-<tr><td class="date">Jan 2017 - Mar 2017</td><td class="title" colspan="3">Postdoctoral Research Assistant</td></tr>
-<tr><td></td><td class="place" colspan="3"><A href="https://www.crick.ac.uk/research/a-z-researchers/researchers-p-s/jim-smith/">Smith Group, The Francis Crick Institute</a>, Mill Hill Laboratory</td></tr>
-<tr><td></td><td class="leftcol" rowpsan=2>Key projects:</td><td class="project" colspan="2">"Comparison of <i>tmem88a</i> mutants and morphants."</td></tr>
-<tr><td></td><td></td><td colspan="2">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
-</td></tr>
-<tr><td></td><td></td><td class="project" colspan="2">"Investigating the role of <i>lamc3</i> during zebrafish development."</td></tr>
-<tr><td></td><td></td><td colspan="2">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
-</td></tr>
-</table>
-
-<table class="position">
-<tr><td class="date">Jan 2017 - Mar 2017</td><td class="title" colspan="3">PhD Student</td></tr>
-<tr><td></td><td class="place" colspan="3"><a href="https://www.crick.ac.uk/research/a-z-researchers/researchers-p-s/jim-smith/">Smith Group, The Francis Crick Institute</a>, Mill Hill Laboratory</td></tr>
-<tr><td></td><td class="leftcol">Thesis:</td><td class="project" colspan="2">"Identification and functional analyses of novel genes in haemovasculogensis".</td></tr>
-<tr><td></td><td></td><td colspan="2">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
-</td></tr>
-</table>
-
-<table class="position">
-<tr><td class="date">Jan 2017 - Mar 2017</td><td class="title" colspan="3">Undergraduate Student</td></tr>
-<tr><td></td><td class="place" colspan="3"><a href="http://www.port.ac.uk/institute-of-biomedical-and-biomolecular-science/molecular-biophysics/garry-scarlett/">Scarlett Group</a>, Department of Biophysics, University of Portsmouth</td></tr>
-<tr><td></td><td class="leftcol">Dissertation:</td><td class="project" colspan="2">"Characterisation of a novel <i>Xenopus</i> double stranded RNA-binding protein."</td></tr>
-<tr><td></td><td></td><td colspan="2">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
-</td></tr>
-</table>
-
-
-<h1><a name="education">Education</a></h1>
-
-
-<h1><a name="teaching">Teaching & Supervision</a></h1>
+<script type="text/javascript"> 
+  $(function() {
+    moveScroller();
+  });
+</script>
 </div>
+<div class="page">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p></div>
+</div>
+
 </div>
 </body>
+</html>
