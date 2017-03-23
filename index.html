@@ -8,8 +8,12 @@
   <meta name="CocoaVersion" content="1404.47">
   <style type="text/css">
    body {background-color: #EFEFEF; padding: 0pt; margin: 0pt;}
+   div.hide{display:none;}
    div.leftbar{background-color: teal; border-style: solid; border-width: 0pt 1pt 0pt 0pt; border-color: #000000; width: 20%; height: 100%; position: fixed; padding: 1pt 0pt; margin: 0;}
-   div.leftbar h1{color: white;}
+   div.leftbar h1{color: white; font-family: "Arial"; font-variant: normal; font-size: 40pt; border-style: none;}
+   div.leftbar h2{color: white; font-family: "Arial"; font-variant: normal; font-size: 14pt; border-style: none; text-align: center;}
+   div.leftbar a{color: white;  display: block; font-family: "Open sans", Tahoma; text-decoration: none; padding: 6pt;}
+   div.leftbar a:hover{color: black; background-color: white;}
    div.rightbar{margin: 0 0 0 20%; border-style: solid; border-width: 0pt; border-color: #000000; width: 100% px; height: 100%; padding: 1pt 0pt;}
   .box{background-color: white; padding: 0 0 5pt 0; margin: 10pt 10pt 20pt 10pt; opacity: 0.8; border-style:solid; border-color: black; border-width: 1pt; opacity: 0.8;}
    .nav {width: 100%; height:100%; border-width: 0pt;}
@@ -28,8 +32,13 @@
   
 <body>
 <div class="leftbar">
-<h1>alex eve</h1>
-<iframe class="nav"></iframe>
+<h1>Alex Eve</h1>
+<h2>Associate Research Fellow</h2>
+<a href="index.html#current">Current Position</a>
+<a href="index.html#research">Research Experience</a>
+<a href="index.html#education">Education</a>
+
+<div class="hide"><iframe class="nav"></iframe></div>
 </div>
 
 <div class ="rightbar">
@@ -82,5 +91,3 @@
 </div>
 </div>
 </body>
-  
-  
