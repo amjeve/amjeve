@@ -12,14 +12,17 @@
    div.leftbar{background-color: teal; border-style: solid; border-width: 0pt 1pt 0pt 0pt; border-color: #000000; width: 20%; height: 100%; position: fixed; padding: 1pt 0pt; margin: 0;}
    div.leftbar h1{color: white; font-family: "Arial"; font-variant: normal; font-size: 40pt; border-style: none;}
    div.leftbar h2{color: white; font-family: "Arial"; font-variant: normal; font-size: 14pt; border-style: none; text-align: center;}
- .drop {max-height: 0; overflow: hidden; -webkit-transition: max-height 1s;
+ div.drop {max-height: 0; overflow: hidden; -webkit-transition: max-height 1s;
 	-moz-transition: max-height 1s;
 	transition: max-height 1s ease;}
-.drop1:hover .drop {max-height: 500px; width: 100%; }
- div.drop1, div.drop a {color: white;  display: block; font-family: "Open sans", Tahoma; text-decoration: none; padding: 6pt;}
-   div.drop a:hover{color: black; background-color: white; transition: background-color 1s ease;}
+div.drop1:hover .drop {max-height: 500px; width: 100%; }
+div.drop1:hover, a.drop:hover{color:black; transition: color 0.5s ease;}
+div.drop1{font-size:12pt;}
+ div.drop1, div.drop a, a.drop{color: white;  display: block; font-family: "Open sans", Tahoma; text-decoration: none; padding: 6pt;}
+div.drop a{font-size: 10pt;}
+   div.drop a:hover{color: black; background-color: white; transition: background-color 1s ease; border-radius: 5px; %box-shadow: inset 1px 1px 2px 2px black;%}
    div.rightbar{margin: 0 0 0 20%; border-style: solid; border-width: 0pt; border-color: #000000; width: 100% px; height: 100%; padding: 1pt 0pt;}
-  .box{background-color: white; padding: 0 0 5pt 0; margin: 10pt 10pt 20pt 10pt; opacity: 0.8; border-style:solid; border-color: black; border-width: 1pt; opacity: 0.8;}
+   div.box{background-color: white; padding: 0 0 5pt 0; margin: 10pt 10pt 20pt 10pt; opacity: 0.8; border-style:solid; border-color: black; border-width: 1pt; opacity: 0.8; border-radius: 5px; box-shadow: 2px 2px 2px 1px grey;}
    .nav {width: 100%; height:100%; border-width: 0pt;}
    h1 {font-family: "Open sans", Tahoma; font-size: 18pt; color: black; font-weight: normal; line-height: 80%; padding: 5pt; border-style: solid; margin: 0pt; border-width: 0 0 1pt 0; border-color: black; font-variant: small-caps; text-align: center;}
    h2 {color: black; padding: 0pt; margin: 0pt;} 
@@ -35,15 +38,19 @@
 </head>
   
 <body>
+	
 <div class="leftbar">
+	
 <h1>Alex Eve</h1>
 <h2>Associate Research Fellow</h2>
+	<h3><ul><li>Twitter</li><li>Research Gate</li><li>LinkedIn</li><li>Email</li><li>ORCID</li></ul></h3>
 <div class="drop1"><span>Online CV</span>
 <div class="drop">
 <a href="index.html#current">Current Position</a>
 <a href="index.html#research">Research Experience</a>
 <a href="index.html#education">Education</a>
-<a href="teaching.html">Teaching</a>
+<a href="index.html#teaching.html">Teaching</a>
+<a href="development.html">Professional Development</a>
 </div></div>
 <div class="drop1"><span>Portfolio</span>
 <div class="drop">
@@ -52,13 +59,7 @@
 <a href="index.html#education">Meetings</a>
 <a href="teaching.html">Research Images</a>
 </div></div>
-<div class="drop1"><span>Professional Development</span>
-<div class="drop">
-<a href="index.html#current">Outreach</a>
-<a href="index.html#research">Presentations</a>
-<a href="index.html#education">Meetings</a>
-<a href="teaching.html">Research Images</a>
-</div></div>
+<a class="drop" href="publications">Publications</a>
 
 <div class="hide"><iframe class="nav"></iframe></div>
 </div>
@@ -110,6 +111,11 @@
 <div class="box">
 
 <h1><a name="education">education</a></h1>
+</div>
+
+<div class="box">
+
+<h1><a name="teaching">teaching and supervision</a></h1>
 </div>
 </div>
 </body>
