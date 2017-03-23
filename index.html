@@ -8,74 +8,294 @@
   <meta name="CocoaVersion" content="1404.47">
   <style type="text/css">
 body{ text-align:center; margin:0; background-image: url('http://i65.tinypic.com/25rf8dc.jpg'); background-color: #EFEFEF;}
-div.wrap{ width: 70%; margin: 0 auto; text-align: left;}
-div.column{}
-div.header{width:100%; background-color:teal; height: 200px;}
-.fixedElement {
-    background-color: #c0c0c0;
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:100;
-}
-</style>
-<script>
-function moveScroller() {
-    var $anchor = $("#scroller-anchor");
-    var $scroller = $('#scroller');
+div.column{width: 70%; max-width: 70%; margin: 0 auto; background-color: #FFF; text-align: left; position: relative;}
+div.header{margin: 0; background-color:teal; top: 0;
+  z-index: 999; 
+width: inherit;
+ display: block; 
+  position: fixed;}
+div.headercontents{padding: 6pt;}
 
-    var move = function() {
-        var st = $(window).scrollTop();
-        var ot = $anchor.offset().top;
-        if(st > ot) {
-            $scroller.css({
-                position: "fixed",
-                top: "0px"
-            });
-        } else {
-            if(st <= ot) {
-                $scroller.css({
-                    position: "relative",
-                    top: ""
-                });
-            }
-        }
-    };
-    $(window).scroll(move);
-    move();
+div.page{ margin: 60px 0 0 0; font-family: "Open sans", Tahoma; }
+.page table{padding: 6pt;}
+
+position{margin: 10pt 6pt; padding: 0; width:100%; margin: 0 10% 0 0; margin: 20pt 0 20pt 0; }
+   .position a:hover{color: #32B2B2; transition: color 1s ease;}
+   .date{font-family: "Open sans", Tahoma; font-size: 14pt; color: black; font-style: italic; vertical-align: middle; width: 20%; text-align: center;}
+   .title, .title a{font-family: "Open sans", Tahoma; font-size: 20pt; color: black; vertical-align: middle; padding: -0;}
+   .place, .place a{font-family: "Open sans", Tahoma; font-size: 14pt; color: black; padding: 0 0 12pt 0;}
+   .project{font-family: "Open sans", Tahoma; font-size: 10pt; color: black; font-weight: bold;}
+   .leftcol{font-family: "Open sans", Tahoma; font-size: 10pt; color: black; font-style: italic; width: 10%;}
+   .date2{font-family: "Open sans", Tahoma; font-size: 10pt; color: black; width: 10%;}
+   .role{font-family: "Open sans", Tahoma; font-size: 10pt; color: black;}
+
+ h1{font-family: "Open sans", Tahoma; font-size: 28pt; color: white; font-weight: normal; line-height: 80%; padding: 20pt 0 0pt 10pt; margin: 0; text-decoration: none; font-style: italic; background: #32B2B2; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #32B2B2, teal); /* For Safari 5.1 to 6.0 */ac
+    background: -o-linear-gradient(to right, #32B2B2, teal); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to right, #32B2B2, teal); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #32B2B2, teal); /* Standard syntax */ border-style:solid; border-width: 1px 0 0 0; border-color: teal;}
+
+.cbp-hrmenu {
+	width: 100%;
+	margin-top: 2em;
+	border-bottom: 4px solid #47a3da;
 }
+
+/* general ul style */
+.cbp-hrmenu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+/* first level ul style */
+.cbp-hrmenu > ul,
+.cbp-hrmenu .cbp-hrsub-inner {
+	width: 90%;
+	max-width: 70em;
+	margin: 0 auto;
+	padding: 0 1.875em;
+}
+
+.cbp-hrmenu > ul > li {
+	display: inline-block;
+}
+
+.cbp-hrmenu > ul > li > a {
+	font-weight: 700;
+	padding: 1em 2em;
+	color: #999;
+	display: inline-block;
+}
+
+.cbp-hrmenu > ul > li > a:hover {
+	color: #47a3da;
+}
+
+.cbp-hrmenu > ul > li.cbp-hropen a,
+.cbp-hrmenu > ul > li.cbp-hropen > a:hover {
+	color: #fff;
+	background: #47a3da;
+}
+
+/* sub-menu */
+.cbp-hrmenu .cbp-hrsub {
+	display: none;
+	position: absolute;
+	background: #47a3da;
+	width: 100%;
+	left: 0;
+}
+
+.cbp-hropen .cbp-hrsub {
+	display: block;
+	padding-bottom: 3em;
+}
+
+.cbp-hrmenu .cbp-hrsub-inner > div {
+	width: 33%;
+	float: left;
+	padding: 0 2em 0;
+}
+
+.cbp-hrmenu .cbp-hrsub-inner:before,
+.cbp-hrmenu .cbp-hrsub-inner:after {
+	content: " ";
+	display: table;
+}
+
+.cbp-hrmenu .cbp-hrsub-inner:after {
+	clear: both;
+}
+
+.cbp-hrmenu .cbp-hrsub-inner > div a {
+	line-height: 2em;
+}
+
+.cbp-hrsub h4 {
+	color: #afdefa;
+	padding: 2em 0 0.6em;
+	margin: 0;
+	font-size: 160%;
+	font-weight: 300;
+}
+
+/* Examples for media queries */
+
+@media screen and (max-width: 52.75em) { 
+
+	.cbp-hrmenu {
+		font-size: 80%;
+	}
+
+}
+
+@media screen and (max-width: 43em) { 
+
+	.cbp-hrmenu {
+		font-size: 120%;
+		border: none;
+	}
+
+	.cbp-hrmenu > ul,
+	.cbp-hrmenu .cbp-hrsub-inner {
+		width: 100%;
+		padding: 0;
+	}
+
+	.cbp-hrmenu .cbp-hrsub-inner {
+		padding: 0 2em;
+		font-size: 75%;
+	}
+
+	.cbp-hrmenu > ul > li {
+		display: block;
+		border-bottom: 4px solid #47a3da;
+	}
+
+	.cbp-hrmenu > ul > li > a { 
+		display: block;
+		padding: 1em 3em;
+	}
+
+	.cbp-hrmenu .cbp-hrsub { 
+		position: relative;
+	}
+
+	.cbp-hrsub h4 {
+		padding-top: 0.6em;
+	}
+
+}
+
+@media screen and (max-width: 36em) { 
+	.cbp-hrmenu .cbp-hrsub-inner > div {
+		width: 100%;
+		float: none;
+		padding: 0 2em;
+	}
+}
+
+<Script>
+var cbpHorizontalMenu = (function() {
+
+	var $listItems = $( '#cbp-hrmenu > ul > li' ),
+		$menuItems = $listItems.children( 'a' ),
+		$body = $( 'body' ),
+		current = -1;
+
+	function init() {
+		$menuItems.on( 'click', open );
+		$listItems.on( 'click', function( event ) { event.stopPropagation(); } );
+	}
+
+	function open( event ) {
+
+		if( current !== -1 ) {
+			$listItems.eq( current ).removeClass( 'cbp-hropen' );
+		}
+
+		var $item = $( event.currentTarget ).parent( 'li' ),
+			idx = $item.index();
+
+		if( current === idx ) {
+			$item.removeClass( 'cbp-hropen' );
+			current = -1;
+		}
+		else {
+			$item.addClass( 'cbp-hropen' );
+			current = idx;
+			$body.off( 'click' ).on( 'click', close );
+		}
+
+		return false;
+
+	}
+
+	function close( event ) {
+		$listItems.eq( current ).removeClass( 'cbp-hropen' );
+		current = -1;
+	}
+
+	return { init : init };
+
+})();
 </script>
+
+</style>
+
 
 </head>
 
 <body>
 
-<div class="wrap">
 <div class="column">
 <div class="header">
+<div class="headercontents">
+Alex Eve
 
-<div id="sidebar" style="width:270px;"> 
-  <div id="scroller-anchor"></div> 
-  <div id="scroller" style="margin-top:10px; width:270px"> 
-    Scroller Scroller Scroller
-  </div>
+<div class="menu">
+
+<nav id="cbp-hrmenu" class="cbp-hrmenu">
+	<ul>
+		<li>
+			<a href="#">Products</a>
+			<div class="cbp-hrsub">
+				<div class="cbp-hrsub-inner"> 
+					<div>
+						<h4>Learning & Games</h4>
+						<ul>
+							<li><a href="#">Catch the Bullet</a></li>
+							<li><a href="#">Snoopydoo</a></li>
+							<!-- ... -->
+						</ul>
+					</div>
+					<div>
+						<h4>Utilities</h4>
+						<ul>
+							<li><a href="#">Gadget Finder</a></li>
+							<li><a href="#">Green Tree Express</a></li>
+							<li><a href="#">Green Tree Pro</a></li>
+							<li><a href="#">Wobbler 3.0</a></li>
+							<li><a href="#">Coolkid</a></li>
+						</ul>
+					</div>
+					<div>
+						<!-- ... -->
+					</div>
+				</div><!-- /cbp-hrsub-inner -->
+			</div><!-- /cbp-hrsub -->
+		</li>
+		<li><!-- ... --></li>
+		<li><!-- ... --></li>
+		<!-- ... -->
+	</ul>
+</nav>
+
+</div>
 </div>
 
-<script type="text/javascript"> 
-  $(function() {
-    moveScroller();
-  });
-</script>
+
 </div>
 <div class="page">
+<h1><a name="current">Current Position</a></h1>
+
+<table class="position">
+<tr><td class="date">Jul 2016 - Present</td><td class="title" colspan="3" ><a href="http://biosciences.exeter.ac.uk/staff/index.php?web_id=Alex_Eve">Associate Research Fellow</a></td></tr>
+<tr><td></td><td class="place" colspan="3">Ingham Group, <a href="http://www.exeter.ac.uk/livingsystems/">Living Systems Institute</a>, University of Exeter</td></tr>
+<tr><td></td><td class="leftcol">Key projects:</td><td class="project" colspan="2">"Evolution of the Hedgehog signalling pathway." <br /></td></tr>
+<tr><td></td><td></td><td colspan="2" class="role">
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non vehicula sapien. Integer consectetur, ligula et cursus tristique, enim sem ultricies lacus, sit amet placerat nibh nisl id nisi. Fusce in orci vestibulum, laoreet justo id, ultricies nulla. Vivamus ullamcorper odio justo, sit amet auctor sapien faucibus ut. Nullam lorem arcu, finibus vel tortor quis, eleifend fringilla orci. Etiam porttitor, velit nec pellentesque ultricies, urna dui tempus justo, vel tincidunt odio ante vitae neque. Morbi commodo metus vel lorem auctor, eget cursus diam laoreet. Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p></div>
-</div>
+</td></tr>
+<tr><td></td><td class="leftcol">Additional roles:</td><td class="date2">Nov 2016</td><td class="role">Visiting scientist: Francis Crick Institute</td></tr>
+<tr><td></td><td></td><td colspan="2"><p>Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p></td></tr>
+
+<tr><td></td><td></td><td class="date2">Oct 2016</td><td class="role">Collaborator: A*STAR Institute</td></tr>
+<tr><td></td><td></td><td colspan="2"><p>Sed tincidunt ullamcorper libero non rhoncus. Proin tincidunt est sed felis finibus euismod. Duis ornare ante at neque tristique lacinia. Pellentesque imperdiet mauris sit amet facilisis tempor. Sed purus est, iaculis vitae volutpat tempor, laoreet at arcu. Aliquam non nibh nunc. Nunc eget quam nec lorem sodales pharetra.</p></td></tr>
 
 </div>
+</div>
+
+
 </body>
 </html>
-
